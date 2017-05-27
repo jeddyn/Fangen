@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-    int size=0,helpVar;
+    int size=0,helpVar,tabSize;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -19,7 +19,7 @@ public class Main {
                 size = helpVar*(-1);
             else break;
 
-            int tabSize = size*2;
+             tabSize = size*2;
             char tab[][] = new char[tabSize][tabSize];
             PrintFangen printFangen = new PrintFangen(size,helpVar,tab);
             printFangen.completeTabDot(tab);
