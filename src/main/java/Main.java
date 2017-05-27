@@ -30,12 +30,12 @@ public class Main {
                 if(helpVar>0)
                    printFangen.printRight();
 
-                getPrint(size, tab);
+                showResult(size, tab);
          }
     }
     }
 
-    private static void getPrint(int size, char[][] tab) {
+    private static void showResult(int size, char[][] tab) {
         for(int i = 0 ; i < 2*size ; i++)
         {
             for(int k = 0 ; k < 2*size ; k++)
