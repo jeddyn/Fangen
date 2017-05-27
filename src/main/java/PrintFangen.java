@@ -1,20 +1,30 @@
-import java.util.Scanner;
-
 /**
  * Created by Mateusz on 2017-05-27.
  */
 public class PrintFangen {
-    Scanner scanner;
     private int size, helpVar;
     private char tab[][];
 
-    PrintFangen(int size, int helpVar, char tab[][]){
+    PrintFangen(int size, int helpVar){
         this.helpVar =helpVar;
         this.size =size;
-        this.tab=tab;
-
+        int tabSize = size*2;
+        this.tab=new char[tabSize][tabSize];
     }
-    public void completeTabDot(char tab[][]){
+
+    public char[][] makeTab(){
+        completeTabDot();
+
+        if(helpVar > 0){
+            printRight();
+        }else if(helpVar < 0){
+            printLeft();
+        }
+
+        return tab;
+    }
+
+    private char[][] completeTabDot(){
         for(int i = 0; i < 2* size; i++)
         {
             for(int k = 0; k < 2* size; k++)
@@ -22,9 +32,10 @@ public class PrintFangen {
                 tab[i][k] = '.';
             }
         }
+        return tab;
     }
 
-    public void printLeft(){
+    private void printLeft(){
 
             for(int i = 0, p = 0; i < size; i++,p++)
             {
@@ -48,7 +59,7 @@ public class PrintFangen {
     }
 
 
-    public void printRight(){
+    private void printRight(){
             for(int i = 0, p = 0; i < size; i++,p++)
             {
                 tab[size -p-1][size -p-1] = '*';
