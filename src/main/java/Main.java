@@ -15,7 +15,7 @@ public class Main {
 
         if (helpVar >= -200 && helpVar <= 200) {
             if(helpVar==0) break;
-            else size=Math.abs(helpVar); 
+            else size=Math.abs(helpVar);
 
             PrintFangen printFangen = new PrintFangen(size,helpVar);
             showResult(printFangen.makeTab());
