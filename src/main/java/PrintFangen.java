@@ -15,68 +15,68 @@ public class PrintFangen {
     public char[][] makeTab(){
         completeTabDot();
 
-        if(helpVar > 0){
+        if(this.helpVar > 0){
             printRight();
-        }else if(helpVar < 0){
+        }else if(this.helpVar < 0){
             printLeft();
         }
 
-        return tab;
+        return this.tab;
     }
 
     private char[][] completeTabDot(){
-        for(int i = 0; i < 2* size; i++)
+        for(int i = 0; i < 2* this.size; i++)
         {
-            for(int k = 0; k < 2* size; k++)
+            for(int k = 0; k < 2* this.size; k++)
             {
-                tab[i][k] = '.';
+                this.tab[i][k] = '.';
             }
         }
-        return tab;
+        return this.tab;
     }
 
     private void printLeft(){
 
-            for(int i = 0, p = 0; i < size; i++,p++)
+            for(int i = 0, p = 0; i < this.size; i++,p++)
             {
-                tab[size -p-1][size -p-1] = '*';
+                tab[this.size -p-1][this.size -p-1] = '*';
                 for(int k = 1; k+p< size; k++)
-                    tab[size -p-1-k][size -p-1] = '*';
+                    tab[this.size -p-1-k][this.size -p-1] = '*';
 
-                tab[size -p-1][size +p] = '*';
-                for(int k = 1; k+p< size; k++)
-                    tab[size -p-1][size +p+k] = '*';
+                tab[this.size -p-1][this.size +p] = '*';
+                for(int k = 1; k+p< this.size; k++)
+                    tab[this.size -p-1][this.size +p+k] = '*';
 
-                tab[size +p][size -p-1] = '*';
-                for(int k = 1; k+p< size; k++)
-                    tab[size +p][size -p-1-k] = '*';
+                tab[this.size +p][this.size -p-1] = '*';
+                for(int k = 1; k+p< this.size; k++)
+                    tab[this.size +p][this.size -p-1-k] = '*';
 
-                tab[size +p][size +p] = '*';
-                for(int k = 1; k+p< size; k++)
-                    tab[size +p+k][size +p] = '*';
+                tab[this.size +p][this.size +p] = '*';
+                for(int k = 1; k+p< this.size; k++)
+                    tab[this.size +p+k][this.size +p] = '*';
         }
 
     }
 
 
     private void printRight(){
-            for(int i = 0, p = 0; i < size; i++,p++)
+            for(int i = 0, p = 0; i < this.size; i++,p++)
             {
-                tab[size -p-1][size -p-1] = '*';
-                for(int k = 1; k + p < size; k++)
-                    tab[size -p-1][size -p-1-k] = '*';
+                tab[this.size -p-1][this.size -p-1] = '*';
+                for(int k = 1; k + p < this.size; k++)
+                    tab[this.size -p-1][this.size -p-1-k] = '*';
 
-                tab[size -p-1][size +p] = '*';
-                for(int k = 1; k+p< size; k++)
-                    tab[size -p-1-k][size +p] = '*';
+                tab[this.size -p-1][this.size +p] = '*';
+                for(int k = 1; k+p< this.size; k++)
+                    tab[this.size -p-1-k][this.size +p] = '*';
 
-                tab[size +p][size -p-1] = '*';
-                for(int k = 1; k+p< size; k++)
-                    tab[size +p+k][size -p-1] = '*';
+                tab[this.size +p][this.size -p-1] = '*';
+                for(int k = 1; k+p< this.size; k++)
+                    tab[this.size +p+k][this.size -p-1] = '*';
 
-                tab[size +p][size +p] = '*';
-                for(int k = 1; k+p< size; k++)
-                    tab[size +p][size +p+k] = '*';
+                tab[this.size +p][this.size +p] = '*';
+                for(int k = 1; k+p< this.size; k++)
+                    tab[this.size +p][this.size +p+k] = '*';
             }
 
 
